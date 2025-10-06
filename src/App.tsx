@@ -20,6 +20,7 @@ import FavoritesPage from './components/FavoritesPage';
 import AdminPanel from './components/AdminPanel';
 import AboutPage from './components/AboutPage';
 import AIChatbot from './components/AIChatbot';
+import Minesweeper from './components/Minesweeper';
 import { products as staticProducts } from './data/products';
 import { Product, CartItem } from './types';
 import { supabase } from './lib/supabase';
@@ -29,7 +30,7 @@ const AppContent: React.FC = () => {
   const [dbProducts, setDbProducts] = useState<Product[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [currentView, setCurrentView] = useState<'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'games'>('home');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -385,7 +386,11 @@ const AppContent: React.FC = () => {
 
   const handleCategorySelect = (categoryId: string) => {
     setSelectedCategory(categoryId);
-    setCurrentView('products');
+    if (categoryId === 'games') {
+      setCurrentView('games');
+    } else {
+      setCurrentView('products');
+    }
   };
 
   const handleSearch = (query: string, categoryId: string) => {
@@ -400,7 +405,7 @@ const AppContent: React.FC = () => {
     setSelectedCategory('all');
   };
 
-  const handleViewChange = (view: 'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about') => {
+  const handleViewChange = (view: 'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'games') => {
     setCurrentView(view);
   };
 
@@ -433,6 +438,29 @@ const AppContent: React.FC = () => {
 
   if (currentView === 'about') {
     return <AboutPage onGoBack={() => setCurrentView('home')} />;
+  }
+
+  if (currentView === 'games') {
+    return (
+      <div>
+        <Header
+          cartItemsCount={cartItemsCount}
+          onCartClick={() => setIsCartOpen(true)}
+          onSearch={handleSearch}
+          onGoHome={handleGoHome}
+          onViewChange={handleViewChange}
+        />
+        <Minesweeper />
+        <Cart
+          isOpen={isCartOpen}
+          onClose={() => setIsCartOpen(false)}
+          items={cartItems}
+          onUpdateQuantity={handleUpdateQuantity}
+          onRemoveItem={handleRemoveItem}
+        />
+        <AIChatbot />
+      </div>
+    );
   }
 
   return (
