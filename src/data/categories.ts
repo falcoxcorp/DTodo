@@ -170,13 +170,13 @@ export const categories: Category[] = [
     id: 'games',
     name: 'Juegos y Juguetes',
     icon: '🎮',
-    count: 0,
+    count: 2,
     subcategories: [
       { id: 'video-games', name: 'Videojuegos', count: 0 },
       { id: 'consoles', name: 'Consolas', count: 0 },
       { id: 'toys', name: 'Juguetes Infantiles', count: 0 },
-      { id: 'board-games', name: 'Juegos de Mesa', count: 0 },
-      { id: 'puzzles', name: 'Puzzles', count: 0 },
+      { id: 'board', name: 'Juegos de Mesa', count: 1 },
+      { id: 'puzzle', name: 'Puzzles', count: 1 },
       { id: 'collectibles', name: 'Coleccionables', count: 0 }
     ]
   },

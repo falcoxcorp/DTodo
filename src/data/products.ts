@@ -2630,5 +2630,58 @@ export const products: Product[] = [
       provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
       municipalities: ['all']
     }
+  },
+
+  // Juego Buscaminas
+  {
+    id: 9001,
+    name: 'Buscaminas Clásico',
+    price: 0,
+    image: 'https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg?auto=compress&cs=tinysrgb&w=800',
+    category: 'games',
+    subcategory: 'puzzle',
+    brand: 'DTodo Games',
+    rating: 4.8,
+    reviews: 523,
+    inStock: true,
+    isNew: true,
+    description: 'Juego clásico de Buscaminas. Desafía tu lógica y estrategia encontrando todas las minas sin detonarlas. Múltiples niveles de dificultad.',
+    specifications: {
+      'Tipo': 'Juego de lógica',
+      'Niveles': 'Fácil, Medio, Difícil',
+      'Jugadores': '1 jugador',
+      'Precio': 'Gratis'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
+  },
+
+  // Juego Dominó
+  {
+    id: 9002,
+    name: 'Dominó Clásico',
+    price: 0,
+    image: 'https://images.pexels.com/photos/278918/pexels-photo-278918.jpeg?auto=compress&cs=tinysrgb&w=800',
+    category: 'games',
+    subcategory: 'board',
+    brand: 'DTodo Games',
+    rating: 4.9,
+    reviews: 687,
+    inStock: true,
+    isNew: true,
+    description: 'Juego tradicional cubano de Dominó. Juega contra la computadora con fichas realistas y reglas clásicas. Perfecto para practicar tu estrategia.',
+    specifications: {
+      'Tipo': 'Juego de mesa',
+      'Fichas': '28 fichas clásicas',
+      'Jugadores': '1 vs Computadora',
+      'Dificultad': 'Media',
+      'Precio': 'Gratis'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
   }
 ];
