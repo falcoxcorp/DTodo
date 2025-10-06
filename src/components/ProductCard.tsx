@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, ShoppingCart, Heart } from 'lucide-react';
+import { Star, ShoppingCart, Heart, Play } from 'lucide-react';
 import { Product } from '../types';
 import { useFavorites } from '../contexts/FavoritesContext';
 
@@ -108,18 +108,28 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onQuick
         </div>
 
         {/* Price */}
-        <div className="mb-1.5 xs:mb-2">
-          <div className="flex items-center gap-1 xs:gap-2 mb-1">
-            <span className="text-sm xs:text-base sm:text-lg font-bold text-blue-600">
-              {formatPrice(product.price)}
-            </span>
-            {product.originalPrice && (
-              <span className="text-[10px] xs:text-xs text-gray-500 line-through">
-                {formatPrice(product.originalPrice)}
+        {product.category !== 'games' && (
+          <div className="mb-1.5 xs:mb-2">
+            <div className="flex items-center gap-1 xs:gap-2 mb-1">
+              <span className="text-sm xs:text-base sm:text-lg font-bold text-blue-600">
+                {formatPrice(product.price)}
               </span>
-            )}
+              {product.originalPrice && (
+                <span className="text-[10px] xs:text-xs text-gray-500 line-through">
+                  {formatPrice(product.originalPrice)}
+                </span>
+              )}
+            </div>
           </div>
-        </div>
+        )}
+
+        {product.category === 'games' && (
+          <div className="mb-1.5 xs:mb-2">
+            <span className="text-sm xs:text-base sm:text-lg font-bold text-green-600">
+              ¡GRATIS!
+            </span>
+          </div>
+        )}
 
         {/* Stock status */}
         <div className="flex items-center justify-between mb-1.5 xs:mb-2">
@@ -130,15 +140,25 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onQuick
           </span>
         </div>
 
-        {/* Add to cart button */}
-        <button
-          onClick={() => onAddToCart(product)}
-          disabled={!product.inStock}
-          className="w-full bg-blue-600 text-white py-1.5 xs:py-2 px-2 xs:px-3 rounded-md font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-1 xs:gap-1.5 text-xs xs:text-sm mt-auto"
-        >
-          <ShoppingCart className="w-3 h-3 xs:w-3.5 xs:h-3.5" />
-          {product.inStock ? 'Agregar al carrito' : 'Agotado'}
-        </button>
+        {/* Add to cart / Play button */}
+        {product.category === 'games' ? (
+          <button
+            onClick={() => onAddToCart(product)}
+            className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-1.5 xs:py-2 px-2 xs:px-3 rounded-md font-medium hover:from-green-600 hover:to-emerald-700 transition-all flex items-center justify-center gap-1 xs:gap-1.5 text-xs xs:text-sm mt-auto shadow-lg hover:shadow-xl"
+          >
+            <Play className="w-3 h-3 xs:w-3.5 xs:h-3.5 fill-current" />
+            Jugar Ahora
+          </button>
+        ) : (
+          <button
+            onClick={() => onAddToCart(product)}
+            disabled={!product.inStock}
+            className="w-full bg-blue-600 text-white py-1.5 xs:py-2 px-2 xs:px-3 rounded-md font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-1 xs:gap-1.5 text-xs xs:text-sm mt-auto"
+          >
+            <ShoppingCart className="w-3 h-3 xs:w-3.5 xs:h-3.5" />
+            {product.inStock ? 'Agregar al carrito' : 'Agotado'}
+          </button>
+        )}
       </div>
     </div>
   );

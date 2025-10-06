@@ -353,6 +353,13 @@ const AppContent: React.FC = () => {
   }, []);
 
   const handleAddToCart = (product: Product) => {
+    if (product.category === 'games') {
+      if (product.name.includes('Buscaminas')) {
+        setCurrentView('games');
+      }
+      return;
+    }
+
     setCartItems(prevItems => {
       const existingItem = prevItems.find(item => item.id === product.id);
       if (existingItem) {
