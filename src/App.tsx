@@ -21,6 +21,7 @@ import AdminPanel from './components/AdminPanel';
 import AboutPage from './components/AboutPage';
 import AIChatbot from './components/AIChatbot';
 import Minesweeper from './components/Minesweeper';
+import SellerApplicationForm from './components/SellerApplicationForm';
 import { products as staticProducts } from './data/products';
 import { Product, CartItem } from './types';
 import { supabase } from './lib/supabase';
@@ -30,6 +31,7 @@ const AppContent: React.FC = () => {
   const [dbProducts, setDbProducts] = useState<Product[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isSellerFormOpen, setIsSellerFormOpen] = useState(false);
   const [currentView, setCurrentView] = useState<'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'games'>('home');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -527,7 +529,7 @@ const AppContent: React.FC = () => {
         </>
       )}
 
-      <Footer onNavigate={handleViewChange} />
+      <Footer onNavigate={handleViewChange} onOpenSellerForm={() => setIsSellerFormOpen(true)} />
 
       <Cart
         isOpen={isCartOpen}
@@ -535,6 +537,11 @@ const AppContent: React.FC = () => {
         items={cartItems}
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
+      />
+
+      <SellerApplicationForm
+        isOpen={isSellerFormOpen}
+        onClose={() => setIsSellerFormOpen(false)}
       />
 
       <AIChatbot />

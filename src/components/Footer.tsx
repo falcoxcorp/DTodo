@@ -1,12 +1,13 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Store } from 'lucide-react';
 import { envConfig } from '../config/env';
 
 interface FooterProps {
   onNavigate?: (view: 'about') => void;
+  onOpenSellerForm?: () => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenSellerForm }) => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
@@ -65,6 +66,15 @@ Compra fácil, segura y con entregas rápidas 🚚✨
               <li><a href="/preguntas-frecuentes" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm lg:text-base">Preguntas Frecuentes</a></li>
               <li><a href="/envios-cuba" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm lg:text-base">Envíos a Cuba</a></li>
               <li><a href="/metodos-pago" className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm lg:text-base">Métodos de Pago</a></li>
+              <li>
+                <button
+                  onClick={onOpenSellerForm}
+                  className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm lg:text-base text-left group"
+                >
+                  <Store className="w-4 h-4 group-hover:text-blue-400 transition-colors" />
+                  <span className="group-hover:text-blue-400 transition-colors">Vende con Nosotros</span>
+                </button>
+              </li>
             </ul>
           </div>
 
