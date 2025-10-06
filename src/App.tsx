@@ -21,7 +21,6 @@ import AdminPanel from './components/AdminPanel';
 import AboutPage from './components/AboutPage';
 import AIChatbot from './components/AIChatbot';
 import Minesweeper from './components/Minesweeper';
-import Domino from './components/Domino';
 import { products as staticProducts } from './data/products';
 import { Product, CartItem } from './types';
 import { supabase } from './lib/supabase';
@@ -31,7 +30,7 @@ const AppContent: React.FC = () => {
   const [dbProducts, setDbProducts] = useState<Product[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [currentView, setCurrentView] = useState<'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'minesweeper' | 'domino'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'games'>('home');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
@@ -356,9 +355,7 @@ const AppContent: React.FC = () => {
   const handleAddToCart = (product: Product) => {
     if (product.category === 'games') {
       if (product.name.includes('Buscaminas')) {
-        setCurrentView('minesweeper');
-      } else if (product.name.includes('Dominó')) {
-        setCurrentView('domino');
+        setCurrentView('games');
       }
       return;
     }
@@ -411,7 +408,7 @@ const AppContent: React.FC = () => {
     setSelectedCategory('all');
   };
 
-  const handleViewChange = (view: 'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'minesweeper' | 'domino') => {
+  const handleViewChange = (view: 'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'games') => {
     setCurrentView(view);
   };
 
@@ -446,7 +443,7 @@ const AppContent: React.FC = () => {
     return <AboutPage onGoBack={() => setCurrentView('home')} />;
   }
 
-  if (currentView === 'minesweeper') {
+  if (currentView === 'games') {
     return (
       <div>
         <Header
@@ -457,29 +454,6 @@ const AppContent: React.FC = () => {
           onViewChange={handleViewChange}
         />
         <Minesweeper />
-        <Cart
-          isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
-          items={cartItems}
-          onUpdateQuantity={handleUpdateQuantity}
-          onRemoveItem={handleRemoveItem}
-        />
-        <AIChatbot />
-      </div>
-    );
-  }
-
-  if (currentView === 'domino') {
-    return (
-      <div>
-        <Header
-          cartItemsCount={cartItemsCount}
-          onCartClick={() => setIsCartOpen(true)}
-          onSearch={handleSearch}
-          onGoHome={handleGoHome}
-          onViewChange={handleViewChange}
-        />
-        <Domino />
         <Cart
           isOpen={isCartOpen}
           onClose={() => setIsCartOpen(false)}
