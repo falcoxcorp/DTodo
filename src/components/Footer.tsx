@@ -84,7 +84,7 @@ Compra fácil, segura y con entregas rápidas 🚚✨
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center gap-2 sm:gap-3">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
-                <a href={`tel:${envConfig.storePhone.replace(/\s/g, '')}`} className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm lg:text-base\" itemProp="telephone">{envConfig.storePhone}</a>
+                <a href={`tel:${envConfig.storePhone.replace(/\s/g, '')}`} className="text-gray-300 hover:text-white transition-colors text-xs sm:text-sm lg:text-base\" itemProp=\"telephone">{envConfig.storePhone}</a>
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
