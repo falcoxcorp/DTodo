@@ -22,11 +22,7 @@ const DIFFICULTIES: Record<Difficulty, GameConfig> = {
   hard: { rows: 16, cols: 16, mines: 60 },
 };
 
-interface MinesweeperProps {
-  onClose?: () => void;
-}
-
-const Minesweeper: React.FC<MinesweeperProps> = ({ onClose }) => {
+const Minesweeper: React.FC = () => {
   const [difficulty, setDifficulty] = useState<Difficulty>('easy');
   const [board, setBoard] = useState<Cell[][]>([]);
   const [gameStatus, setGameStatus] = useState<'playing' | 'won' | 'lost'>('playing');

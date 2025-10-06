@@ -21,7 +21,6 @@ import AdminPanel from './components/AdminPanel';
 import AboutPage from './components/AboutPage';
 import AIChatbot from './components/AIChatbot';
 import Minesweeper from './components/Minesweeper';
-import Domino from './components/Domino';
 import { products as staticProducts } from './data/products';
 import { Product, CartItem } from './types';
 import { supabase } from './lib/supabase';
@@ -34,7 +33,6 @@ const AppContent: React.FC = () => {
   const [currentView, setCurrentView] = useState<'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'games'>('home');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [selectedGame, setSelectedGame] = useState<'minesweeper' | 'domino' | null>(null);
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -358,10 +356,6 @@ const AppContent: React.FC = () => {
     if (product.category === 'games') {
       if (product.name.includes('Buscaminas')) {
         setCurrentView('games');
-        setSelectedGame('minesweeper');
-      } else if (product.name.includes('Dominó')) {
-        setCurrentView('games');
-        setSelectedGame('domino');
       }
       return;
     }
@@ -459,42 +453,7 @@ const AppContent: React.FC = () => {
           onGoHome={handleGoHome}
           onViewChange={handleViewChange}
         />
-        <div className="min-h-screen bg-gray-50 pt-32 pb-12 px-4">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">Centro de Juegos</h1>
-
-            {!selectedGame ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <button
-                  onClick={() => setSelectedGame('minesweeper')}
-                  className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all transform hover:scale-105"
-                >
-                  <div className="text-6xl mb-4 text-center">💣</div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Buscaminas</h2>
-                  <p className="text-gray-600 text-center">Juego clásico de lógica</p>
-                </button>
-
-                <button
-                  onClick={() => setSelectedGame('domino')}
-                  className="bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all transform hover:scale-105"
-                >
-                  <div className="text-6xl mb-4 text-center">🎲</div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Dominó</h2>
-                  <p className="text-gray-600 text-center">Juego tradicional cubano</p>
-                </button>
-              </div>
-            ) : (
-              <>
-                {selectedGame === 'minesweeper' && (
-                  <Minesweeper onClose={() => setSelectedGame(null)} />
-                )}
-                {selectedGame === 'domino' && (
-                  <Domino onClose={() => setSelectedGame(null)} />
-                )}
-              </>
-            )}
-          </div>
-        </div>
+        <Minesweeper />
         <Cart
           isOpen={isCartOpen}
           onClose={() => setIsCartOpen(false)}
