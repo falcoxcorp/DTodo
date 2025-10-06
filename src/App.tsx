@@ -393,11 +393,7 @@ const AppContent: React.FC = () => {
 
   const handleCategorySelect = (categoryId: string) => {
     setSelectedCategory(categoryId);
-    if (categoryId === 'games') {
-      setCurrentView('games');
-    } else {
-      setCurrentView('products');
-    }
+    setCurrentView('products');
   };
 
   const handleSearch = (query: string, categoryId: string) => {
