@@ -274,12 +274,12 @@ const Hero: React.FC = () => {
             {/* Contenido derecho - Imagen del producto */}
             <div className="relative mt-6 lg:mt-0">
               <div className="relative z-10 transform hover:scale-105 transition-transform duration-500">
-                <div className="w-full max-w-sm sm:max-w-lg mx-auto rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden bg-white/10 backdrop-blur-sm" style={{ aspectRatio: '4/3' }}>
+                <div className="w-full max-w-sm sm:max-w-lg mx-auto rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden bg-white/10 backdrop-blur-sm p-4" style={{ aspectRatio: '4/3' }}>
                   <img
                     key={currentSlide}
                     src={currentSlideData.image}
                     alt="Productos destacados"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     loading="eager"
                   />
                 </div>
