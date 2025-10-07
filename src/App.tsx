@@ -22,7 +22,6 @@ import AboutPage from './components/AboutPage';
 import AIChatbot from './components/AIChatbot';
 import Minesweeper from './components/Minesweeper';
 import SellerApplicationForm from './components/SellerApplicationForm';
-import FoodSlider from './components/FoodSlider';
 import { products as staticProducts } from './data/products';
 import { Product, CartItem } from './types';
 import { supabase } from './lib/supabase';
@@ -500,7 +499,6 @@ const AppContent: React.FC = () => {
           <Hero />
           {currentView === 'home' && (
             <>
-              <FoodSlider />
               <CategoryGrid onCategorySelect={handleCategorySelect} products={allProducts} />
               <BestSellers onAddToCart={handleAddToCart} />
             </>

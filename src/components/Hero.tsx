@@ -133,15 +133,15 @@ const Hero: React.FC = () => {
       features: ["Doble Antena", "4 Puertos LAN", "Fácil Setup"]
     },
     {
-      title: "Black Friday",
-      subtitle: "Ofertas irresistibles",
-      description: "Los mejores precios del año en toda nuestra tienda",
-      buttonText: "Ver Ofertas",
-      buttonColor: "bg-red-600 hover:bg-red-700",
-      gradient: "from-gray-900 via-red-900 to-black",
-      image: "https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=800",
-      badge: { text: "HOT", color: "bg-red-600" },
-      features: ["Precios Únicos", "Stock Limitado", "Solo Hoy"]
+      title: "Combos de Comida",
+      subtitle: "Todo lo que necesitas",
+      description: "Paquetes completos con frijoles, pasta, arroz, aceite y más - ¡Ahorra hasta $105 USD!",
+      buttonText: "Ver Combos",
+      buttonColor: "bg-orange-500 hover:bg-orange-600",
+      gradient: "from-green-600 via-emerald-600 to-teal-700",
+      image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1759876443566-f890cf77cc84a90370fb10209d3febd1.png",
+      badge: { text: "$105 USD", color: "bg-red-600" },
+      features: ["3 Frijol Negro (Lb)", "Pasta + Espaguetis", "Leche + Café"]
     }
   ];
 
