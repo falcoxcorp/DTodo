@@ -102,10 +102,6 @@ Compra fácil, segura y con entregas rápidas 🚚✨
                 </address>
               </div>
               <div className="flex items-center gap-2 sm:gap-3">
-                <span className="text-blue-400 text-xs sm:text-sm">🇨🇺</span>
-                <span className="text-gray-300 text-xs sm:text-sm lg:text-base">Servicio a toda Cuba</span>
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3">
                 <span className="text-green-400 text-xs sm:text-sm">⏰</span>
                 <span className="text-gray-300 text-xs sm:text-sm lg:text-base">Atención 24/7</span>
               </div>
