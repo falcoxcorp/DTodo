@@ -80,7 +80,7 @@ Compra fácil, segura y con entregas rápidas 🚚✨
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-sm sm:text-base lg:text-lg font-semibold mb-3 sm:mb-4">CONTACTO y Atención</h4>
+            <h4 className="text-sm sm:text-base lg:text-lg font-semibold mb-3 sm:mb-4">CONTACTO Y ATENCIÓN</h4>
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center gap-2 sm:gap-3">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0" />
