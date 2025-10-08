@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Store } from 'lucide-react';
+import { Facebook, Instagram, Send, Mail, Phone, MapPin, Store } from 'lucide-react';
 import { envConfig } from '../config/env';
 
 interface FooterProps {
@@ -32,17 +32,14 @@ En Dtodo encuentras todo lo que necesitas en un solo lugar: tecnología, hogar, 
 Compra fácil, segura y con entregas rápidas 🚚✨
             </p>
             <div className="flex space-x-3 sm:space-x-4">
-              <a href="https://www.facebook.com/DTodoCuba" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Facebook DTodo Cuba" itemProp="sameAs">
+              <a href="https://www.facebook.com/share/1AA3CmHQrJ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors" aria-label="Facebook DTodo Cuba" itemProp="sameAs">
                 <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
-              <a href="https://www.instagram.com/DTodoCuba" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Instagram DTodo Cuba" itemProp="sameAs">
+              <a href="https://www.instagram.com/dtodonline2025?igsh=MWkxZ3BzbDlzazM2aw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors" aria-label="Instagram DTodo Cuba" itemProp="sameAs">
                 <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
-              <a href="https://twitter.com/DTodoCuba" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Twitter DTodo Cuba" itemProp="sameAs">
-                <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-              <a href="https://www.youtube.com/DTodoCuba" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="YouTube DTodo Cuba" itemProp="sameAs">
-                <Youtube className="w-4 h-4 sm:w-5 sm:h-5" />
+              <a href="https://t.me/dtodonline" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Telegram DTodo Cuba" itemProp="sameAs">
+                <Send className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             </div>
           </div>
