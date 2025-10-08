@@ -505,8 +505,8 @@ const AppContent: React.FC = () => {
             <>
               <CategoryGrid onCategorySelect={handleCategorySelect} products={allProducts} />
               <BestSellers onAddToCart={handleAddToCart} />
-              <WeeklyDeals onProductClick={setQuickViewProduct} />
-              <RecentProducts onProductClick={setQuickViewProduct} />
+              <WeeklyDeals onProductClick={setQuickViewProduct} onAddToCart={handleAddToCart} />
+              <RecentProducts onProductClick={setQuickViewProduct} onAddToCart={handleAddToCart} />
             </>
           )}
           {currentView === 'products' && (

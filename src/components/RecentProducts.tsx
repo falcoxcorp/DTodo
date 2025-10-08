@@ -6,9 +6,10 @@ import { supabase } from '../lib/supabase';
 
 interface RecentProductsProps {
   onProductClick: (product: Product) => void;
+  onAddToCart?: (product: Product) => void;
 }
 
-const RecentProducts: React.FC<RecentProductsProps> = ({ onProductClick }) => {
+const RecentProducts: React.FC<RecentProductsProps> = ({ onProductClick, onAddToCart }) => {
   const [recentProducts, setRecentProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -183,7 +184,8 @@ const RecentProducts: React.FC<RecentProductsProps> = ({ onProductClick }) => {
                 >
                   <ProductCard
                     product={product}
-                    onClick={() => onProductClick(product)}
+                    onAddToCart={onAddToCart || (() => {})}
+                    onQuickView={() => onProductClick(product)}
                   />
                 </div>
               ))}

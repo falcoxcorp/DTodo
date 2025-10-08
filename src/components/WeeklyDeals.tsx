@@ -6,9 +6,10 @@ import { supabase } from '../lib/supabase';
 
 interface WeeklyDealsProps {
   onProductClick: (product: Product) => void;
+  onAddToCart?: (product: Product) => void;
 }
 
-const WeeklyDeals: React.FC<WeeklyDealsProps> = ({ onProductClick }) => {
+const WeeklyDeals: React.FC<WeeklyDealsProps> = ({ onProductClick, onAddToCart }) => {
   const [deals, setDeals] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -144,7 +145,8 @@ const WeeklyDeals: React.FC<WeeklyDealsProps> = ({ onProductClick }) => {
               )}
               <ProductCard
                 product={product}
-                onClick={() => onProductClick(product)}
+                onAddToCart={onAddToCart || (() => {})}
+                onQuickView={() => onProductClick(product)}
               />
             </div>
           ))}
