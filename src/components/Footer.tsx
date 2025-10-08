@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Store, CreditCard, Banknote, DollarSign } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Store } from 'lucide-react';
 import { envConfig } from '../config/env';
 
 interface FooterProps {
@@ -139,21 +139,29 @@ Compra fácil, segura y con entregas rápidas 🚚✨
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <span className="text-gray-400 text-xs sm:text-sm">Métodos de pago seguros:</span>
             <div className="flex gap-2 sm:gap-3 items-center">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-3 py-1.5 rounded flex items-center gap-1 shadow-md" title="Visa">
-                <CreditCard className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-xs font-bold">VISA</span>
+              <div className="bg-white px-3 py-1.5 rounded shadow-md" title="Visa">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
+                  alt="Visa"
+                  className="h-4 sm:h-5 w-auto"
+                />
               </div>
-              <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-3 py-1.5 rounded flex items-center gap-1 shadow-md" title="Mastercard">
-                <CreditCard className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-xs font-bold">MC</span>
+              <div className="bg-white px-3 py-1.5 rounded shadow-md" title="Mastercard">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                  alt="Mastercard"
+                  className="h-4 sm:h-5 w-auto"
+                />
               </div>
-              <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white px-3 py-1.5 rounded flex items-center gap-1 shadow-md" title="Zelle">
-                <DollarSign className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-xs font-bold">ZELLE</span>
+              <div className="bg-white px-3 py-1.5 rounded shadow-md" title="Zelle">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Zelle_logo.svg"
+                  alt="Zelle"
+                  className="h-4 sm:h-5 w-auto"
+                />
               </div>
-              <div className="bg-gradient-to-r from-green-600 to-green-800 text-white px-3 py-1.5 rounded flex items-center gap-1 shadow-md" title="Efectivo">
-                <Banknote className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-xs font-bold">CASH</span>
+              <div className="bg-gradient-to-r from-green-600 to-green-800 text-white px-3 py-1.5 rounded shadow-md flex items-center gap-1" title="Efectivo">
+                <span className="text-xs sm:text-sm font-bold">💵 CASH</span>
               </div>
             </div>
           </div>
