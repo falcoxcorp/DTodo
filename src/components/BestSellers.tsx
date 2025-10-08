@@ -23,95 +23,40 @@ const BestSellers: React.FC<BestSellersProps> = ({ onAddToCart }) => {
     try {
       setLoading(true);
 
-      const { data: orderItems, error: orderError } = await supabase
-        .from('order_items')
-        .select(`
-          product_id,
-          quantity,
-          province_id
-        `);
+      const { data: products, error: productsError } = await supabase
+        .from('products')
+        .select('*')
+        .eq('is_active', true)
+        .gt('stock', 0)
+        .order('sales_count', { ascending: false })
+        .limit(8);
 
-      if (orderError) throw orderError;
+      if (productsError) throw productsError;
 
-      const productSales: { [key: string]: { total: number, provinces: { [province: string]: number } } } = {};
-      orderItems?.forEach(item => {
-        if (item.product_id) {
-          if (!productSales[item.product_id]) {
-            productSales[item.product_id] = { total: 0, provinces: {} };
-          }
-          productSales[item.product_id].total += item.quantity;
+      if (products && products.length >= 8) {
+        const formattedProducts = products.map(p => ({
+          id: p.id,
+          name: p.name,
+          price: parseFloat(p.base_price) || 0,
+          originalPrice: p.original_price ? parseFloat(p.original_price) : undefined,
+          image: p.image_url,
+          rating: p.rating || 4.5,
+          reviews: p.reviews_count || 0,
+          category: p.category_id || 'electronics',
+          subcategory: p.subcategory_id || 'otros',
+          brand: p.brand || '',
+          description: p.description || '',
+          specifications: {},
+          inStock: p.stock > 0,
+          availableLocations: {
+            provinces: ['all'],
+            municipalities: ['all']
+          },
+          discount_percentage: p.discount_percentage || 0,
+          sales_count: p.sales_count || 0
+        }));
 
-          if (item.province_id) {
-            productSales[item.product_id].provinces[item.province_id] =
-              (productSales[item.product_id].provinces[item.province_id] || 0) + item.quantity;
-          }
-        }
-      });
-
-      const topProductIds = Object.entries(productSales)
-        .sort(([, a], [, b]) => b.total - a.total)
-        .slice(0, 8)
-        .map(([productId]) => productId);
-
-      if (topProductIds.length > 0 && topProductIds.length >= 8) {
-        const { data: products, error: productsError } = await supabase
-          .from('products')
-          .select('*')
-          .in('id', topProductIds)
-          .eq('is_active', true)
-          .gt('stock', 0);
-
-        if (productsError) throw productsError;
-
-        const productsWithPrices = await Promise.all(
-          (products || []).map(async (p) => {
-            const topProvince = productSales[p.id]?.provinces
-              ? Object.entries(productSales[p.id].provinces)
-                  .sort(([, a], [, b]) => b - a)[0]?.[0]
-              : null;
-
-            let price = parseFloat(p.base_price) || 0;
-
-            if (topProvince) {
-              const { data: regionalPrice } = await supabase
-                .from('regional_pricing')
-                .select('price, region_id')
-                .eq('product_id', p.id)
-                .eq('is_available', true)
-                .single();
-
-              if (regionalPrice?.price) {
-                price = parseFloat(regionalPrice.price);
-              }
-            }
-
-            return {
-              id: p.id,
-              name: p.name,
-              price: price,
-              originalPrice: p.original_price ? parseFloat(p.original_price) : undefined,
-              image: p.image_url,
-              rating: p.rating || 4.5,
-              reviews: p.reviews_count || 0,
-              category: p.category_id || 'electronics',
-              subcategory: p.subcategory_id || 'otros',
-              brand: p.brand || '',
-              description: p.description || '',
-              specifications: {},
-              inStock: p.stock > 0,
-              availableLocations: {
-                provinces: ['all'],
-                municipalities: ['all']
-              }
-            };
-          })
-        );
-
-        const sortedProducts = topProductIds
-          .map(id => productsWithPrices.find(p => p.id === id))
-          .filter((p): p is any => p !== undefined);
-
-        setBestSellers(sortedProducts);
+        setBestSellers(formattedProducts);
       } else {
         const { data: allProducts, error: countError } = await supabase
           .from('products')

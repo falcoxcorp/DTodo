@@ -11,8 +11,11 @@ import LocationSelector from './components/LocationSelector';
 import ProductGrid from './components/ProductGrid';
 import CategoryGrid from './components/CategoryGrid';
 import BestSellers from './components/BestSellers';
+import WeeklyDeals from './components/WeeklyDeals';
+import RecentProducts from './components/RecentProducts';
 import Cart from './components/Cart';
 import Footer from './components/Footer';
+import ProductQuickView from './components/ProductQuickView';
 import UserProfile from './components/UserProfile';
 import OrdersPage from './components/OrdersPage';
 import SettingsPage from './components/SettingsPage';
@@ -35,6 +38,7 @@ const AppContent: React.FC = () => {
   const [currentView, setCurrentView] = useState<'home' | 'products' | 'category' | 'favorites' | 'profile' | 'orders' | 'settings' | 'admin' | 'about' | 'games'>('home');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -501,6 +505,8 @@ const AppContent: React.FC = () => {
             <>
               <CategoryGrid onCategorySelect={handleCategorySelect} products={allProducts} />
               <BestSellers onAddToCart={handleAddToCart} />
+              <WeeklyDeals onProductClick={setQuickViewProduct} />
+              <RecentProducts onProductClick={setQuickViewProduct} />
             </>
           )}
           {currentView === 'products' && (
@@ -542,6 +548,13 @@ const AppContent: React.FC = () => {
       <SellerApplicationForm
         isOpen={isSellerFormOpen}
         onClose={() => setIsSellerFormOpen(false)}
+      />
+
+      <ProductQuickView
+        product={quickViewProduct}
+        isOpen={quickViewProduct !== null}
+        onClose={() => setQuickViewProduct(null)}
+        onAddToCart={handleAddToCart}
       />
 
       <AIChatbot />
