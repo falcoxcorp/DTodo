@@ -12,7 +12,7 @@ const ExchangeRateWidget: React.FC = () => {
       className="flex items-center gap-2 px-3 py-1 bg-white/10 hover:bg-white/20 rounded-md transition-all text-white text-sm font-medium"
     >
       <DollarSign className="w-4 h-4" />
-      <span>$ Tasa representativa del mercado informal en Cuba</span>
+      <span>Tasa representativa del mercado informal en Cuba</span>
     </button>
   );
 };
