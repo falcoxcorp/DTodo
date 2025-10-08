@@ -181,16 +181,10 @@ const RecentProducts: React.FC<RecentProductsProps> = ({ onProductClick }) => {
                   className="flex-shrink-0 px-3"
                   style={{ width: `${100 / itemsPerView}%` }}
                 >
-                  <div className="relative">
-                    <div className="absolute top-2 left-2 z-10 bg-blue-500 text-white px-3 py-1 rounded-full font-bold text-xs shadow-lg flex items-center gap-1">
-                      <Sparkles className="w-3 h-3" />
-                      NUEVO
-                    </div>
-                    <ProductCard
-                      product={product}
-                      onClick={() => onProductClick(product)}
-                    />
-                  </div>
+                  <ProductCard
+                    product={product}
+                    onClick={() => onProductClick(product)}
+                  />
                 </div>
               ))}
             </div>

@@ -31,38 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onQuick
           className="w-full h-32 xs:h-36 sm:h-40 lg:h-44 object-cover group-hover:scale-105 transition-transform duration-300"
         />
         
-        {/* Badges */}
-        <div className="absolute top-1 left-1 sm:top-2 sm:left-2 flex flex-col gap-1">
-          {product.isNew && (
-            <span className="bg-green-500 text-white text-[9px] xs:text-[10px] sm:text-xs font-bold px-1 xs:px-1.5 py-0.5 rounded">
-              NUEVO
-            </span>
-          )}
-          {product.isSale && (
-            <span className="bg-red-500 text-white text-[9px] xs:text-[10px] sm:text-xs font-bold px-1 xs:px-1.5 py-0.5 rounded">
-              -{product.discount}%
-            </span>
-          )}
-        </div>
 
-        {/* Wishlist button */}
-        <button 
-          onClick={(e) => {
-            e.stopPropagation();
-            toggleFavorite(product);
-          }}
-          className={`absolute top-1 right-1 sm:top-2 sm:right-2 p-1 sm:p-1.5 rounded-full shadow-md transition-all duration-300 ${
-            isProductFavorite 
-              ? 'bg-red-50 hover:bg-red-100 opacity-100' 
-              : 'bg-white hover:bg-gray-50 opacity-0 group-hover:opacity-100'
-          }`}
-        >
-          <Heart className={`w-2.5 h-2.5 sm:w-3 sm:h-3 transition-colors ${
-            isProductFavorite 
-              ? 'text-red-500 fill-current' 
-              : 'text-gray-600 hover:text-red-500'
-          }`} />
-        </button>
 
         {/* Quick view overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
@@ -131,14 +100,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onQuick
           </div>
         )}
 
-        {/* Stock status */}
-        <div className="flex items-center justify-between mb-1.5 xs:mb-2">
-          <span className={`text-[10px] xs:text-xs font-medium ${
-            product.inStock ? 'text-green-600' : 'text-red-600'
-          }`}>
-            {product.inStock ? '✓ En stock' : '✗ Agotado'}
-          </span>
-        </div>
 
         {/* Add to cart / Play button */}
         {product.category === 'games' ? (
