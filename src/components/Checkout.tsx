@@ -488,7 +488,7 @@ const Checkout: React.FC<CheckoutProps> = ({ isOpen, onClose, items, onClearCart
                           }`}
                         >
                           <Truck className="w-6 h-6 mx-auto mb-2" />
-                          <span className="font-medium">Transferencia</span>
+                          <span className="font-medium">Zelle</span>
                         </button>
                         
                         <button
@@ -569,7 +569,7 @@ const Checkout: React.FC<CheckoutProps> = ({ isOpen, onClose, items, onClearCart
                       {/* Transfer Payment Info */}
                       {paymentInfo.method === 'transfer' && (
                         <div className="bg-blue-50 p-4 rounded-lg">
-                          <h4 className="font-medium text-blue-900 mb-2">Información para Transferencia</h4>
+                          <h4 className="font-medium text-blue-900 mb-2">Información para Zelle</h4>
                           <div className="space-y-1 text-sm text-blue-800">
                             <p><strong>Banco:</strong> Banco Popular de Ahorro</p>
                             <p><strong>Cuenta:</strong> 9205-0000-0000-1234</p>
@@ -616,7 +616,7 @@ const Checkout: React.FC<CheckoutProps> = ({ isOpen, onClose, items, onClearCart
                       <h4 className="font-medium mb-2">Método de Pago</h4>
                       <p className="text-sm text-gray-600">
                         {paymentInfo.method === 'card' && 'Tarjeta de Crédito/Débito'}
-                        {paymentInfo.method === 'transfer' && 'Transferencia Bancaria'}
+                        {paymentInfo.method === 'transfer' && 'Zelle'}
                         {paymentInfo.method === 'cash' && 'Pago Contra Entrega'}
                       </p>
                     </div>

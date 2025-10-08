@@ -192,7 +192,7 @@ const AppContent: React.FC = () => {
       "currenciesAccepted": ["USD", "CUP", "Dólar Americano", "Peso Cubano"],
       "paymentAccepted": [
         "Cash", "Credit Card", "Debit Card", "Bank Transfer", "Wire Transfer",
-        "Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito", "Transferencia Bancaria"
+        "Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito", "Zelle"
       ],
       "priceRange": "$1-$2000",
       "openingHours": ["Mo-Su 00:00-23:59"],

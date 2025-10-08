@@ -141,7 +141,7 @@ Compra fácil, segura y con entregas rápidas 🚚✨
             <div className="flex gap-1 sm:gap-2">
               <div className="bg-white text-gray-800 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Visa">VISA</div>
               <div className="bg-white text-gray-800 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Mastercard">MC</div>
-              <div className="bg-green-500 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Transferencia">TRANS</div>
+              <div className="bg-green-500 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Zelle">ZELLE</div>
               <div className="bg-blue-500 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Efectivo">CASH</div>
             </div>
           </div>
