@@ -146,16 +146,16 @@ Compra fácil, segura y con entregas rápidas 🚚✨
                   className="h-4 sm:h-5 w-auto"
                 />
               </div>
-              <div className="bg-white px-3 py-1.5 rounded shadow-md" title="Mastercard">
+              <div className="bg-white px-2 py-1.5 rounded shadow-md" title="Mastercard">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/200px-MasterCard_Logo.svg.png"
                   alt="Mastercard"
                   className="h-4 sm:h-5 w-auto"
                 />
               </div>
               <div className="bg-white px-3 py-1.5 rounded shadow-md" title="Zelle">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Zelle_logo.svg"
+                  src="https://www.zellepay.com/sites/default/files/2021-06/zelle-logo-horiz-3.svg"
                   alt="Zelle"
                   className="h-4 sm:h-5 w-auto"
                 />
