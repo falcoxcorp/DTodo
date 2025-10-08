@@ -49,7 +49,7 @@ Compra fácil, segura y con entregas rápidas 🚚✨
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm sm:text-base lg:text-lg font-semibold mb-3 sm:mb-4">Información y Servicios</h4>
+            <h4 className="text-sm sm:text-base lg:text-lg font-semibold mb-3 sm:mb-4">INFORMACIÓN Y SERVICIOS</h4>
             <ul className="space-y-1.5 sm:space-y-2">
               <li>
                 <button
