@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Store } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Store, CreditCard, Banknote, DollarSign } from 'lucide-react';
 import { envConfig } from '../config/env';
 
 interface FooterProps {
@@ -138,11 +138,23 @@ Compra fácil, segura y con entregas rápidas 🚚✨
 
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <span className="text-gray-400 text-xs sm:text-sm">Métodos de pago seguros:</span>
-            <div className="flex gap-1 sm:gap-2">
-              <div className="bg-white text-gray-800 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Visa">VISA</div>
-              <div className="bg-white text-gray-800 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Mastercard">MC</div>
-              <div className="bg-green-500 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Transferencia">TRANS</div>
-              <div className="bg-blue-500 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Efectivo">CASH</div>
+            <div className="flex gap-2 sm:gap-3 items-center">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-3 py-1.5 rounded flex items-center gap-1 shadow-md" title="Visa">
+                <CreditCard className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs font-bold">VISA</span>
+              </div>
+              <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-3 py-1.5 rounded flex items-center gap-1 shadow-md" title="Mastercard">
+                <CreditCard className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs font-bold">MC</span>
+              </div>
+              <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white px-3 py-1.5 rounded flex items-center gap-1 shadow-md" title="Zelle">
+                <DollarSign className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs font-bold">ZELLE</span>
+              </div>
+              <div className="bg-gradient-to-r from-green-600 to-green-800 text-white px-3 py-1.5 rounded flex items-center gap-1 shadow-md" title="Efectivo">
+                <Banknote className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs font-bold">CASH</span>
+              </div>
             </div>
           </div>
         </div>
