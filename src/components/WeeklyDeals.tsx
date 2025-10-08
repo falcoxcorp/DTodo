@@ -22,22 +22,70 @@ const WeeklyDeals: React.FC<WeeklyDealsProps> = ({ onProductClick }) => {
         .from('products')
         .select('*')
         .eq('is_weekly_deal', true)
+        .eq('is_active', true)
+        .gt('stock', 0)
         .order('discount_percentage', { ascending: false })
         .limit(8);
 
       if (error) throw error;
 
-      if (data && data.length > 0) {
-        setDeals(data as Product[]);
+      if (data && data.length >= 8) {
+        const formattedProducts = data.map(p => ({
+          id: p.id,
+          name: p.name,
+          price: parseFloat(p.base_price) || 0,
+          originalPrice: p.original_price ? parseFloat(p.original_price) : undefined,
+          image: p.image_url,
+          rating: p.rating || 4.5,
+          reviews: p.reviews_count || 0,
+          category: p.category_id || 'electronics',
+          subcategory: p.subcategory_id || 'otros',
+          brand: p.brand || '',
+          description: p.description || '',
+          specifications: {},
+          inStock: p.stock > 0,
+          availableLocations: {
+            provinces: ['all'],
+            municipalities: ['all']
+          },
+          discount_percentage: p.discount_percentage || 0
+        }));
+        setDeals(formattedProducts);
       } else {
-        const { data: fallbackData, error: fallbackError } = await supabase
+        const { data: allProducts, error: allError } = await supabase
           .from('products')
           .select('*')
-          .limit(8)
-          .order('created_at', { ascending: false });
+          .eq('is_active', true)
+          .gt('stock', 0);
 
-        if (fallbackError) throw fallbackError;
-        setDeals((fallbackData as Product[]) || []);
+        if (allError) throw allError;
+
+        if (allProducts && allProducts.length > 0) {
+          const shuffled = [...allProducts].sort(() => Math.random() - 0.5);
+          const selected = shuffled.slice(0, Math.min(8, allProducts.length));
+
+          const formattedProducts = selected.map(p => ({
+            id: p.id,
+            name: p.name,
+            price: parseFloat(p.base_price) || 0,
+            originalPrice: p.original_price ? parseFloat(p.original_price) : undefined,
+            image: p.image_url,
+            rating: p.rating || 4.5,
+            reviews: p.reviews_count || 0,
+            category: p.category_id || 'electronics',
+            subcategory: p.subcategory_id || 'otros',
+            brand: p.brand || '',
+            description: p.description || '',
+            specifications: {},
+            inStock: p.stock > 0,
+            availableLocations: {
+              provinces: ['all'],
+              municipalities: ['all']
+            },
+            discount_percentage: p.discount_percentage || 0
+          }));
+          setDeals(formattedProducts);
+        }
       }
     } catch (error) {
       console.error('Error loading weekly deals:', error);

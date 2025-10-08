@@ -36,11 +36,69 @@ const RecentProducts: React.FC<RecentProductsProps> = ({ onProductClick }) => {
       const { data, error } = await supabase
         .from('products')
         .select('*')
+        .eq('is_active', true)
+        .gt('stock', 0)
         .order('created_at', { ascending: false })
-        .limit(12);
+        .limit(15);
 
       if (error) throw error;
-      setRecentProducts((data as Product[]) || []);
+
+      if (data && data.length >= 10) {
+        const formattedProducts = data.map(p => ({
+          id: p.id,
+          name: p.name,
+          price: parseFloat(p.base_price) || 0,
+          originalPrice: p.original_price ? parseFloat(p.original_price) : undefined,
+          image: p.image_url,
+          rating: p.rating || 4.5,
+          reviews: p.reviews_count || 0,
+          category: p.category_id || 'electronics',
+          subcategory: p.subcategory_id || 'otros',
+          brand: p.brand || '',
+          description: p.description || '',
+          specifications: {},
+          inStock: p.stock > 0,
+          availableLocations: {
+            provinces: ['all'],
+            municipalities: ['all']
+          }
+        }));
+        setRecentProducts(formattedProducts);
+      } else {
+        const { data: allProducts, error: allError } = await supabase
+          .from('products')
+          .select('*')
+          .eq('is_active', true)
+          .gt('stock', 0);
+
+        if (allError) throw allError;
+
+        if (allProducts && allProducts.length > 0) {
+          const shuffled = [...allProducts].sort(() => Math.random() - 0.5);
+          const selected = shuffled.slice(0, Math.min(15, allProducts.length));
+
+          const formattedProducts = selected.map(p => ({
+            id: p.id,
+            name: p.name,
+            price: parseFloat(p.base_price) || 0,
+            originalPrice: p.original_price ? parseFloat(p.original_price) : undefined,
+            image: p.image_url,
+            rating: p.rating || 4.5,
+            reviews: p.reviews_count || 0,
+            category: p.category_id || 'electronics',
+            subcategory: p.subcategory_id || 'otros',
+            brand: p.brand || '',
+            description: p.description || '',
+            specifications: {},
+            inStock: p.stock > 0,
+            availableLocations: {
+              provinces: ['all'],
+              municipalities: ['all']
+            }
+          }));
+          setRecentProducts(formattedProducts);
+        }
+      }
     } catch (error) {
       console.error('Error loading recent products:', error);
     } finally {
