@@ -138,31 +138,11 @@ Compra fácil, segura y con entregas rápidas 🚚✨
 
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <span className="text-gray-400 text-xs sm:text-sm">Métodos de pago seguros:</span>
-            <div className="flex gap-2 sm:gap-3 items-center">
-              <div className="bg-white px-3 py-1.5 rounded shadow-md" title="Visa">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
-                  alt="Visa"
-                  className="h-4 sm:h-5 w-auto"
-                />
-              </div>
-              <div className="bg-white px-2 py-1.5 rounded shadow-md" title="Mastercard">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/200px-MasterCard_Logo.svg.png"
-                  alt="Mastercard"
-                  className="h-4 sm:h-5 w-auto"
-                />
-              </div>
-              <div className="bg-white px-3 py-1.5 rounded shadow-md" title="Zelle">
-                <img
-                  src="https://www.zellepay.com/sites/default/files/2021-06/zelle-logo-horiz-3.svg"
-                  alt="Zelle"
-                  className="h-4 sm:h-5 w-auto"
-                />
-              </div>
-              <div className="bg-gradient-to-r from-green-600 to-green-800 text-white px-3 py-1.5 rounded shadow-md flex items-center gap-1" title="Efectivo">
-                <span className="text-xs sm:text-sm font-bold">💵 CASH</span>
-              </div>
+            <div className="flex gap-1 sm:gap-2">
+              <div className="bg-white text-gray-800 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Visa">VISA</div>
+              <div className="bg-white text-gray-800 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Mastercard">MC</div>
+              <div className="bg-green-500 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Transferencia">TRANS</div>
+              <div className="bg-blue-500 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-[10px] sm:text-xs font-bold" title="Efectivo">CASH</div>
             </div>
           </div>
         </div>
