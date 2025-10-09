@@ -142,6 +142,17 @@ const Hero: React.FC = () => {
       image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1759977491552-e157e9294f5d68a7e6759fb5e40c904f.png",
       badge: { text: "$105 USD", color: "bg-red-600" },
       features: ["3 Frijol Negro (Lb)", "Pasta + Espaguetis", "Leche + Café"]
+    },
+    {
+      title: "Envía Remesas a Cuba",
+      subtitle: "Rápido, seguro y confiable",
+      description: "Transferencias de dinero directas a Cuba con las mejores tarifas del mercado y entrega garantizada",
+      buttonText: "Enviar Ahora",
+      buttonColor: "bg-green-500 hover:bg-green-600",
+      gradient: "from-emerald-600 via-teal-600 to-cyan-700",
+      image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1760017512016-4f02fae581387df7001858eee85f5fe6.png",
+      badge: { text: "SEGURO", color: "bg-emerald-600" },
+      features: ["Entrega Rápida", "Mejor Tarifa", "100% Seguro"]
     }
   ];
 
