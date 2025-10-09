@@ -3,7 +3,6 @@ import { LocationProvider, useLocation } from './contexts/LocationContext';
 import { FavoritesProvider } from './contexts/FavoritesContext';
 import { AuthProvider } from './contexts/AuthContext';
 import SSLRedirect from './components/SSLRedirect';
-import { DatabaseSeeder } from './components/DatabaseSeeder';
 import Header from './components/Header';
 import AnimatedBrandsBar from './components/AnimatedBrandsBar';
 import Hero from './components/Hero';
@@ -558,8 +557,6 @@ const AppContent: React.FC = () => {
       />
 
       <AIChatbot />
-
-      <DatabaseSeeder />
     </div>
   );
 };
