@@ -2637,7 +2637,7 @@ export const products: Product[] = [
     id: 999001,
     name: '🥩 Combo Mixto #1',
     price: 100,
-    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759979907100-ffaa8c6d801c94dd15e084f8783c5a91.png',
+    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759982466443-8cd5cefc3d370e3570d97be53383d974.png',
     category: 'others',
     subcategory: 'food-combos',
     brand: 'DTodo Cuba',
