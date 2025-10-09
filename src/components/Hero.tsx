@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
       buttonText: "Explorar TVs",
       buttonColor: "bg-purple-500 hover:bg-purple-600",
       gradient: "from-indigo-600 via-purple-600 to-pink-600",
-      image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1759978455589-b39cde022f73becb2b3904d8b13ce1df.jpg",
       badge: { text: "4K HDR", color: "bg-blue-500" },
       features: ["Android TV", "WiFi Integrado", "Apps Populares"]
     },
@@ -117,7 +117,7 @@ const Hero: React.FC = () => {
       buttonText: "Ver Ventiladores",
       buttonColor: "bg-cyan-500 hover:bg-cyan-600",
       gradient: "from-cyan-500 via-blue-500 to-indigo-600",
-      image: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1759978389310-bb8e44fa9151d97f0bf4ae2516b95d01.jpg",
       badge: { text: "ECO", color: "bg-green-600" },
       features: ["20,000mAh", "Control Remoto", "Rotación 360°"]
     },
