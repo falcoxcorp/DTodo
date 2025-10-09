@@ -2630,5 +2630,43 @@ export const products: Product[] = [
       provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
       municipalities: ['all']
     }
+  },
+
+  // Combo Mixto #1
+  {
+    id: 999001,
+    name: '🥩 Combo Mixto #1',
+    price: 100,
+    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759979907100-ffaa8c6d801c94dd15e084f8783c5a91.png',
+    category: 'others',
+    subcategory: 'food-combos',
+    brand: 'DTodo Cuba',
+    rating: 5.0,
+    reviews: 245,
+    inStock: true,
+    isNew: true,
+    description: 'Combo completo con carnes, alimentos básicos y productos esenciales. Ideal para abastecer tu hogar con todo lo necesario. Incluye carnes de cerdo y pollo, productos lácteos, granos, y más.',
+    specifications: {
+      'Carne de cerdo (Paleta o muslo)': '10 lb',
+      'Chuleta de cerdo': '3 lb',
+      'Pollo': '10 lb',
+      'Picadillo': '2 paquetes',
+      'Salchicha': '2 paquetes',
+      'Cartón de huevo': '1 unidad',
+      'Frijoles': '5 lb',
+      'Pasta de tomate': '2 unidades',
+      'Espaguetis': '2 paquetes',
+      'Leche condensada': '1 unidad',
+      'Café La Llave': '1 unidad',
+      'Aceite': '1 ref',
+      'Arroz importado': '5 lb',
+      'Leche en polvo': '1 kg',
+      'Azúcar': '1 kg',
+      'Sal': '1 lb'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
   }
 ];

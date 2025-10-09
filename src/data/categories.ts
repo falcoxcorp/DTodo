@@ -182,16 +182,14 @@ export const categories: Category[] = [
   },
   {
     id: 'others',
-    name: 'Otros Productos',
-    icon: '📦',
-    count: 0,
+    name: 'Combos De Comidas',
+    icon: '🍱',
+    count: 1,
     subcategories: [
-      { id: 'various', name: 'Artículos Varios', count: 0 },
-      { id: 'imported', name: 'Importados', count: 0 },
-      { id: 'clearance', name: 'Liquidaciones', count: 0 },
-      { id: 'second-hand', name: 'Segunda Mano', count: 0 },
-      { id: 'crafts', name: 'Artesanías', count: 0 },
-      { id: 'specials', name: 'Especiales', count: 0 }
+      { id: 'food-combos', name: 'Combos Mixtos', count: 1 },
+      { id: 'premium-combos', name: 'Combos Premium', count: 0 },
+      { id: 'basic-combos', name: 'Combos Básicos', count: 0 },
+      { id: 'special-combos', name: 'Combos Especiales', count: 0 }
     ]
   },
   {
