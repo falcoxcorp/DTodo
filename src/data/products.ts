@@ -2737,5 +2737,136 @@ export const products: Product[] = [
       provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
       municipalities: ['all']
     }
+  },
+
+  // Combo Mixto #4
+  {
+    id: 999004,
+    name: '🥩 Combo Mixto #4',
+    price: 50,
+    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759981463168-f170cf563cadf06ed65040b3f108f699.png',
+    category: 'others',
+    subcategory: 'food-combos',
+    brand: 'DTodo Cuba',
+    rating: 4.7,
+    reviews: 142,
+    inStock: true,
+    isNew: true,
+    description: 'Combo práctico con pollo, granos, carnes procesadas y cerveza. Perfecto para el día a día con todo lo básico para alimentar a tu familia.',
+    specifications: {
+      'Pollo': '1 paquete',
+      'Arroz': '3 kg',
+      'Frijoles': '1 kg',
+      'Salchicha': '2 paquetes',
+      'Picadillo': '2 paquetes',
+      'Espaguetis': '2 paquetes',
+      'Pasta de tomate': '1 lata',
+      'Aceite': '1 unidad',
+      'Cerveza': '1 caja'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
+  },
+
+  // Combo Mixto #5
+  {
+    id: 999005,
+    name: '🥩 Combo Mixto #5',
+    price: 50,
+    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759981601252-985ad2b95a4ec52c879eff1c14a4421b.png',
+    category: 'others',
+    subcategory: 'food-combos',
+    brand: 'DTodo Cuba',
+    rating: 4.6,
+    reviews: 134,
+    inStock: true,
+    isNew: true,
+    description: 'Combo con lomo de cerdo, condimentos y malta. Ideal para preparar comidas deliciosas con ingredientes de calidad.',
+    specifications: {
+      'Lomo de cerdo': '5 lb',
+      'Aceite': '2 pomos',
+      'Salchichas': '1 kg',
+      'Mayonesa': '1 pomo',
+      'Espaguetis': '2 paquetes',
+      'Puré de tomate': '1 lata',
+      'Malta': '1 caja'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
+  },
+
+  // Combo Mixto #6
+  {
+    id: 999006,
+    name: '🥩 Combo Mixto #6',
+    price: 120,
+    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759981901302-7646869a878b19ee0b1ddf3c07270a59.png',
+    category: 'others',
+    subcategory: 'food-combos',
+    brand: 'DTodo Cuba',
+    rating: 4.9,
+    reviews: 203,
+    inStock: true,
+    isNew: true,
+    description: 'Combo premium con carnes, bebidas, helado y galletas. El paquete completo para disfrutar en familia con productos de primera calidad.',
+    specifications: {
+      'Lomo de cerdo': '5 lb',
+      'Pollo': '10 lb',
+      'Cerveza nacional': '1 caja',
+      'Café': '2 unidades (el disponible)',
+      'Aceite': '2 pomos',
+      'Salchicha': '1 kg',
+      'Arroz': '3 kg',
+      'Frijoles': '1 kg',
+      'Refresco': '2 pomos de 1.5L',
+      'Helado Nestlé': '1 caja',
+      'Galletas de soda': '1 paquete'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
+  },
+
+  // Combo Chuches #7
+  {
+    id: 999007,
+    name: '🍬 Combo Chuches #7',
+    price: 150,
+    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759982192782-f548f469b5f5c21f2d98bb8418403622.png',
+    category: 'others',
+    subcategory: 'food-combos',
+    brand: 'DTodo Cuba',
+    rating: 5.0,
+    reviews: 267,
+    inStock: true,
+    isNew: true,
+    description: 'Combo de golosinas y bebidas con Nutella, chocolates, caramelos y más. Perfecto para consentir a toda la familia con dulces y snacks deliciosos.',
+    specifications: {
+      'Refrescos de lata': '6 unidades (el disponible)',
+      'Refrescos instantáneos': '8 unidades (el disponible)',
+      'Maltas': '6 unidades (la disponible)',
+      'Jugos de caja': '6 unidades',
+      'Refrescos': '2 botellas de 1.5L',
+      'Leche en polvo': '1 paquete',
+      'Leche condensada': '1 unidad',
+      'Chupachups': '1 paquete',
+      'Galletas de soda': '3 paquetes',
+      'Nutella': '1 pomo',
+      'Mayonesa': '1 pomo',
+      'Galletas dulces': '3 tipos',
+      'Salchicha': '1 paquete',
+      'Chocolate': '1 unidad',
+      'Caramelos': '1 paquete',
+      'Gelatina': '2 paquetes'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
   }
 ];
