@@ -139,7 +139,7 @@ const Hero: React.FC = () => {
       buttonText: "Ver Combos",
       buttonColor: "bg-orange-500 hover:bg-orange-600",
       gradient: "from-green-600 via-emerald-600 to-teal-700",
-      image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1759876443566-f890cf77cc84a90370fb10209d3febd1.png",
+      image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1759977491552-e157e9294f5d68a7e6759fb5e40c904f.png",
       badge: { text: "$105 USD", color: "bg-red-600" },
       features: ["3 Frijol Negro (Lb)", "Pasta + Espaguetis", "Leche + Café"]
     }
