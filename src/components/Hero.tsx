@@ -150,7 +150,7 @@ const Hero: React.FC = () => {
       buttonText: "Enviar Ahora",
       buttonColor: "bg-green-500 hover:bg-green-600",
       gradient: "from-emerald-600 via-teal-600 to-cyan-700",
-      image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1760017512016-4f02fae581387df7001858eee85f5fe6.png",
+      image: "https://photos.pinksale.finance/file/pinksale-logo-upload/1760021142857-5f4ed5e9f9d0368e655845defea9012a.png",
       badge: { text: "SEGURO", color: "bg-emerald-600" },
       features: ["Entrega Rápida", "Mejor Tarifa", "100% Seguro"]
     }
