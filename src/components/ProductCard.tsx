@@ -24,11 +24,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart, onQuick
   return (
     <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group overflow-hidden h-full flex flex-col w-full max-w-sm mx-auto">
       {/* Image container */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden bg-white">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-32 xs:h-36 sm:h-40 lg:h-44 object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-32 xs:h-36 sm:h-40 lg:h-44 object-contain group-hover:scale-105 transition-transform duration-300"
         />
         
 

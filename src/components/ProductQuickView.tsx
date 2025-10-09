@@ -52,11 +52,11 @@ const ProductQuickView: React.FC<ProductQuickViewProps> = ({
 
         <div className="p-6">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="relative">
+            <div className="relative bg-white rounded-lg">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-96 object-cover rounded-lg shadow-md"
+                className="w-full h-96 object-contain rounded-lg shadow-md"
               />
 
               <div className="absolute top-4 left-4 flex flex-col gap-2">
