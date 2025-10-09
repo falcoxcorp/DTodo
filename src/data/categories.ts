@@ -184,9 +184,9 @@ export const categories: Category[] = [
     id: 'others',
     name: 'Combos De Comidas',
     icon: '🍱',
-    count: 1,
+    count: 3,
     subcategories: [
-      { id: 'food-combos', name: 'Combos Mixtos', count: 1 },
+      { id: 'food-combos', name: 'Combos Mixtos', count: 3 },
       { id: 'premium-combos', name: 'Combos Premium', count: 0 },
       { id: 'basic-combos', name: 'Combos Básicos', count: 0 },
       { id: 'special-combos', name: 'Combos Especiales', count: 0 }

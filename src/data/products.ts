@@ -2668,5 +2668,74 @@ export const products: Product[] = [
       provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
       municipalities: ['all']
     }
+  },
+
+  // Combo Mixto #2
+  {
+    id: 999002,
+    name: '🥩 Combo Mixto #2',
+    price: 80,
+    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759980512144-b2536c5af5859231b48ee12e9bec4e88.png',
+    category: 'others',
+    subcategory: 'food-combos',
+    brand: 'DTodo Cuba',
+    rating: 4.9,
+    reviews: 198,
+    inStock: true,
+    isNew: true,
+    description: 'Combo económico con variedad de carnes, conservas y productos básicos. Perfecto para familias que buscan calidad y buen precio. Incluye pollo, cerdo, enlatados y alimentos esenciales.',
+    specifications: {
+      'Pollo': '10 lb',
+      'Lomo de cerdo': '5 lb',
+      'Cartón de huevo': '1 unidad',
+      'Salchicha': '1 paquete',
+      'Picadillo': '1 paquete',
+      'Lata de carne': '1 unidad',
+      'Lata de sardina': '1 unidad',
+      'Aceite': '1 pomo',
+      'Mayonesa': '1 pomo',
+      'Pasta de tomate': '1 lata',
+      'Espaguetis': '1 paquete',
+      'Frijoles': '1 kg',
+      'Arroz': '1 kg',
+      'Café': '1 unidad (el disponible)',
+      'Leche en polvo': '1 kg',
+      'Sazón Goya': '8 paquetes'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
+  },
+
+  // Combo Mixto #3
+  {
+    id: 999003,
+    name: '🥩 Combo Mixto #3',
+    price: 60,
+    image: 'https://photos.pinksale.finance/file/pinksale-logo-upload/1759980970546-653362359af2be17dba387d6ee1232bf.png',
+    category: 'others',
+    subcategory: 'food-combos',
+    brand: 'DTodo Cuba',
+    rating: 4.8,
+    reviews: 176,
+    inStock: true,
+    isNew: true,
+    description: 'Combo básico con productos esenciales y cerveza incluida. Ideal para compartir en familia o con amigos. Incluye pollo, productos básicos y una caja de cerveza.',
+    specifications: {
+      'Pollo': '10 lb',
+      'Cartón de huevos': '1 unidad',
+      'Salchichas': '1 paquete',
+      'Lata de carne': '1 unidad',
+      'Pasta de tomate': '1 lata',
+      'Espagueti': '1 paquete',
+      'Café': '1 unidad (el disponible)',
+      'Leche en polvo': '1 kg',
+      'Cerveza': '1 caja'
+    },
+    availableLocations: {
+      provinces: ['la-habana', 'artemisa', 'mayabeque', 'pinar-del-rio', 'villa-clara', 'matanzas', 'cienfuegos', 'sancti-spiritus', 'ciego-de-avila', 'camaguey', 'las-tunas', 'holguin', 'granma', 'santiago-de-cuba', 'guantanamo', 'isla-de-la-juventud'],
+      municipalities: ['all']
+    }
   }
 ];
