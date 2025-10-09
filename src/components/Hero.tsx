@@ -165,7 +165,7 @@ const Hero: React.FC = () => {
   };
 
   React.useEffect(() => {
-    const interval = setInterval(nextSlide, 6000); // 6 segundos por slide
+    const interval = setInterval(nextSlide, 10000); // 10 segundos por slide
     return () => clearInterval(interval);
   }, []);
 
@@ -361,11 +361,11 @@ const Hero: React.FC = () => {
 
         {/* Indicador de progreso */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white bg-opacity-20">
-          <div 
+          <div
             className="h-full bg-white transition-all duration-300"
             style={{
               width: `${((currentSlide + 1) / slides.length) * 100}%`,
-              transition: 'width 6s linear'
+              transition: 'width 10s linear'
             }}
           ></div>
         </div>
