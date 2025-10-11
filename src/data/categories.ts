@@ -29,6 +29,18 @@ export const categories: Category[] = [
     ]
   },
   {
+    id: 'others',
+    name: 'Combos De Comidas',
+    icon: '🍱',
+    count: 7,
+    subcategories: [
+      { id: 'food-combos', name: 'Combos Mixtos', count: 7 },
+      { id: 'premium-combos', name: 'Combos Premium', count: 0 },
+      { id: 'basic-combos', name: 'Combos Básicos', count: 0 },
+      { id: 'special-combos', name: 'Combos Especiales', count: 0 }
+    ]
+  },
+  {
     id: 'appliances',
     name: 'Electrodomésticos',
     icon: '📺',
@@ -178,18 +190,6 @@ export const categories: Category[] = [
       { id: 'board-games', name: 'Juegos de Mesa', count: 0 },
       { id: 'puzzles', name: 'Puzzles', count: 0 },
       { id: 'collectibles', name: 'Coleccionables', count: 0 }
-    ]
-  },
-  {
-    id: 'others',
-    name: 'Combos De Comidas',
-    icon: '🍱',
-    count: 7,
-    subcategories: [
-      { id: 'food-combos', name: 'Combos Mixtos', count: 7 },
-      { id: 'premium-combos', name: 'Combos Premium', count: 0 },
-      { id: 'basic-combos', name: 'Combos Básicos', count: 0 },
-      { id: 'special-combos', name: 'Combos Especiales', count: 0 }
     ]
   },
   {
