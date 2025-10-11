@@ -17,7 +17,7 @@ export const categories: Category[] = [
   },
   {
     id: 'food',
-    name: 'Alimentos y Combos',
+    name: 'Alimentos',
     icon: '🍽️',
     count: 14,
     subcategories: [
